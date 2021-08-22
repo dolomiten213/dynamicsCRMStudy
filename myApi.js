@@ -22,8 +22,15 @@ Navicon.myApi = (function() {
     getValue(context, field) {
       return context.getFormContext().getAttribute(field).getValue()
     },
+    getValueRibbon(context, field) {
+      return context.getAttribute(field).getValue()
+    },
+
     setValue(context, field, value) {
       context.getFormContext().getAttribute(field).setValue(value)
+    },
+    setValueRibbon(context, field, value) {
+      context.getAttribute(field).setValue(value)
     },
 
     hideFields(context, fields) {
@@ -90,6 +97,40 @@ Navicon.myApi = (function() {
           }
         })
       })
+    },
+
+    async getFieldFromReferencedEntity(context, entityKey, field) {
+      let valuesArray = context.getFormContext().getAttribute(entityKey);
+      if (valuesArray == null) throw new Error("Не удалось найти поле " + entityKey);
+      valuesArray = valuesArray.getValue();
+      if (valuesArray === null || valuesArray.length < 1) {
+        throw new Error("Не удалось получить значение из ключевого поля " + entityKey)
+      }
+      let refEntity = valuesArray[0];
+      let res;
+
+      res = await Xrm.WebApi.retrieveRecord(refEntity.entityType, refEntity.id, "?$select=" + field)
+
+      console.log(res);
+
+      return res[field]
+    },
+
+    async getFieldFromReferencedEntityRibbon(context, entityKey, field) {
+      let valuesArray = context.getAttribute(entityKey);
+      if (valuesArray == null) throw new Error("Не удалось найти поле " + entityKey);
+      valuesArray = valuesArray.getValue();
+      if (valuesArray === null || valuesArray.length < 1) {
+        throw new Error("Не удалось получить значение из ключевого поля " + entityKey)
+      }
+      let refEntity = valuesArray[0];
+      let res;
+
+      res = await Xrm.WebApi.retrieveRecord(refEntity.entityType, refEntity.id, "?$select=" + field)
+
+      console.log(res);
+
+      return res[field]
     }
   }
 })();
