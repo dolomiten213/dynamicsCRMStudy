@@ -143,8 +143,7 @@ Navicon.contract = (function() {
       formContext.getAttribute(fields.autod_creditid).addOnChange(  checkCreditExpiration  );
       formContext.getAttribute(fields.autod_creditid).addOnChange(  pasteCreditPeriodIntoContract  );
       formContext.getAttribute(fields.autod_autoid).addOnChange(  calculateAmount  );
-      formContext.getAttribute(fields.autod_autoid).addOnChange(  () => Navicon.myApi.setValue(context, fields.autod_creditid, null);  );
-
+      formContext.getAttribute(fields.autod_autoid).addOnChange(  () => Navicon.myApi.setValue(context, fields.autod_creditid, null)  );
       
       if (nameAttr === null) { //wrong primary field
         

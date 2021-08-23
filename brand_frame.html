@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="ClientGlobalContext.js.aspx"></script>
+  <style>
+    section {
+      border: solid 1px #ccc;
+      margin: 10px;
+    }
+    .row {
+      border-bottom: solid 1px #ccc;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin: 0 10px 0;
+    }
+    .row:last-child {
+      border: none;
+    }
+    .title {
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      color: #444;
+      margin-left: 25px;
+      width: 30%;
+      max-width: 170px;
+    }
+    .value {
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      display: block;
+    }
+    .link {
+      color: #0860b8;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .link:hover {
+      font-weight: 400;
+      text-decoration: underline;
+    }
+    
+  </style>
+  <script>
+
+  function queryConstructor(brandName) {
+    return [
+    "?fetchXml=",
+    "<fetch top='50'>",
+"  <entity name='autod_auto'>",
+"    <filter>",
+"      <condition attribute='autod_brandidname' operator='eq' value='", brandName, "'/>",
+"    </filter>",
+"    <link-entity name='autod_auto_autod_credit' from='autod_autoid' to='autod_autoid' link-type='inner' intersect='true'>",
+"      <link-entity name='autod_credit' from='autod_creditid' to='autod_creditid' link-type='inner' intersect='true'>",
+"        <attribute name='autod_creditid' alias='CreditId' />",
+"        <attribute name='autod_creditperiod' alias='Period' />",
+"        <attribute name='autod_name' alias='CreditName' />",
+"      </link-entity>",
+"    </link-entity>",
+"    <link-entity name='autod_model' from='autod_modelid' to='autod_modelid' link-type='inner'>",
+"      <attribute name='autod_modelid' alias='ModelId' />",
+"      <attribute name='autod_name' alias='ModelName' />",
+"    </link-entity>",
+"  </entity>",
+"</fetch>",
+      ].join("");
+  }
+
+  function createModel(id, name) {
+    let tit = document.createElement('p')
+    tit.classList.add('title');
+    tit.innerText = "Модель";
+
+    let a = document.createElement('a')
+    a.classList.add('link')
+    a.innerText = name
+    a.href = "https://org92050511.crm4.dynamics.com/main.aspx?app=d365default&forceUCI=1&pagetype=entityrecord&etn=autod_model&id=" + id;
+
+    let value = document.createElement('p')
+    value.classList.add('value')
+    value.appendChild(a)
+
+    let div = document.createElement('div');
+    div.classList.add('row')
+
+    div.appendChild(tit);
+    div.appendChild(value);
+
+    return div;
+  }
+  function createCredit(id, name) {
+    let tit = document.createElement('p')
+    tit.classList.add('title');
+    tit.innerText = "Кредитная программа";
+
+    let a = document.createElement('a')
+    a.classList.add('link')
+    a.innerText = name
+    a.href = "https://org92050511.crm4.dynamics.com/main.aspx?app=d365default&forceUCI=1&pagetype=entityrecord&etn=autod_credit&id=" + id;
+
+    let value = document.createElement('p')
+    value.classList.add('value')
+    value.appendChild(a)
+
+    let div = document.createElement('div');
+    div.classList.add('row')
+
+    div.appendChild(tit);
+    div.appendChild(value);
+
+    return div;
+  }
+  function createField(title, value) {
+    let tit = document.createElement('p')
+    tit.classList.add('title');
+    tit.innerText = title;
+
+    let val = document.createElement('p')
+    val.classList.add('value')
+    val.innerText = value;
+
+    let div = document.createElement('div');
+    div.classList.add('row')
+
+    div.appendChild(tit);
+    div.appendChild(val);
+
+    return div;
+  }
+  
+  function createSection(element) {
+    let credit = createCredit( element.CreditId, element.CreditName);
+    let model = createModel(element.ModelId, element.ModelName);
+    let period = createField("Срок кредита", element.Period);
+
+    let section = document.createElement('section')
+
+    section.appendChild(credit);
+    section.appendChild(model);
+    section.appendChild(period);
+
+    document.body.appendChild(section);
+  }
+  
+  async function fetchDataFromServer(brandName) {
+        
+      let query = queryConstructor(brandName);
+      let res = await Xrm.WebApi.retrieveMultipleRecords("autod_auto", query);
+      return res.entities;
+    }
+
+  async function pasteDataIntoFrame(context) {
+
+      let brandName = context.getAttribute("autod_name").getValue();
+      if (brandName === null) {
+        return;
+      }
+
+      let data = await fetchDataFromServer(brandName); 
+      if (!data) {
+        console.log("Empty response");
+        return;
+      }
+      data.forEach(element => {
+        createSection(element);
+      });
+
+    }
+
+
+  </script>
+</head>
+<body>
+</body>
+</html>
