@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "lYz8CI8ZOQ4sva/LmcjSdPRxUfiHudAOFiTmE4F2MaeUTMAVTDmLgxVrPau1JNLZDJhLrdETs9Ad7kZ/Il2nrg==",
+  "success": true,
+  "projectFilePath": "D:\\Code\\Dynamics CRM\\study\\autoDiler\\plugins\\plugin3\\plugin3.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dolomiten\\.nuget\\packages\\microsoft.crmsdk.coreassemblies\\9.0.2.34\\microsoft.crmsdk.coreassemblies.9.0.2.34.nupkg.sha512",
+    "C:\\Users\\dolomiten\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\dolomiten\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"Microsoft.CrmSdk.CoreAssemblies 9.0.2.34\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETStandard,Version=v2.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "Microsoft.CrmSdk.CoreAssemblies",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+D:\Code\Dynamics CRM\study\autoDiler\plugins\Plugins\bin\Debug\net5.0\Plugins.deps.json
+D:\Code\Dynamics CRM\study\autoDiler\plugins\Plugins\bin\Debug\net5.0\Plugins.dll
+D:\Code\Dynamics CRM\study\autoDiler\plugins\Plugins\bin\Debug\net5.0\ref\Plugins.dll
+D:\Code\Dynamics CRM\study\autoDiler\plugins\Plugins\bin\Debug\net5.0\Plugins.pdb
+D:\Code\Dynamics CRM\study\autoDiler\plugins\Plugins\obj\Debug\net5.0\Plugins.csproj.AssemblyReference.cache
+D:\Code\Dynamics CRM\study\autoDiler\plugins\Plugins\obj\Debug\net5.0\Plugins.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\Dynamics CRM\study\autoDiler\plugins\Plugins\obj\Debug\net5.0\Plugins.AssemblyInfoInputs.cache
+D:\Code\Dynamics CRM\study\autoDiler\plugins\Plugins\obj\Debug\net5.0\Plugins.AssemblyInfo.cs
+D:\Code\Dynamics CRM\study\autoDiler\plugins\Plugins\obj\Debug\net5.0\Plugins.csproj.CoreCompileInputs.cache
+D:\Code\Dynamics CRM\study\autoDiler\plugins\Plugins\obj\Debug\net5.0\Plugins.dll
+D:\Code\Dynamics CRM\study\autoDiler\plugins\Plugins\obj\Debug\net5.0\ref\Plugins.dll
+D:\Code\Dynamics CRM\study\autoDiler\plugins\Plugins\obj\Debug\net5.0\Plugins.pdb

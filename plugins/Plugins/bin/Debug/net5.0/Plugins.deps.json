@@ -1,0 +1,45 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Plugins/1.0.0": {
+        "dependencies": {
+          "Microsoft.CrmSdk.CoreAssemblies": "9.0.2.34"
+        },
+        "runtime": {
+          "Plugins.dll": {}
+        }
+      },
+      "Microsoft.CrmSdk.CoreAssemblies/9.0.2.34": {
+        "runtime": {
+          "lib/net462/Microsoft.Crm.Sdk.Proxy.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.46.3545"
+          },
+          "lib/net462/Microsoft.Xrm.Sdk.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.46.3545"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Plugins/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.CrmSdk.CoreAssemblies/9.0.2.34": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tVWvTPiCQc1/giosbEl8eV51f9NatVyix+IugsCiksaG/dQAoxufNj2hWDCzP+Wz3ZWBPIZx5vY4lLvCVWHR+g==",
+      "path": "microsoft.crmsdk.coreassemblies/9.0.2.34",
+      "hashPath": "microsoft.crmsdk.coreassemblies.9.0.2.34.nupkg.sha512"
+    }
+  }
+}
