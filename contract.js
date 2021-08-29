@@ -117,7 +117,6 @@ Navicon.contract = (function() {
       (async () => {
         let result = await Xrm.WebApi.retrieveRecord(refEntity.entityType, refEntity.id, "?$select=autod_name&$expand=autod_modelid($select=autod_recommendedamount)")
         amount = result?.autod_modelid?.autod_recommendedamount;
-        alert(amount);
         Navicon.myApi.setValue(context, fields.autod_summa, amount);
       })();
     }    

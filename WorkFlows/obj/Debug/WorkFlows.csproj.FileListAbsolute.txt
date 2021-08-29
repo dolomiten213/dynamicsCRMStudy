@@ -1,0 +1,12 @@
+D:\Code\Dynamics CRM\study\autoDiler\WorkFlows\obj\Debug\WorkFlows.csproj.CoreCompileInputs.cache
+D:\Code\Dynamics CRM\study\autoDiler\WorkFlows\bin\Debug\WorkFlows.dll
+D:\Code\Dynamics CRM\study\autoDiler\WorkFlows\bin\Debug\WorkFlows.pdb
+D:\Code\Dynamics CRM\study\autoDiler\WorkFlows\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\Code\Dynamics CRM\study\autoDiler\WorkFlows\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\Code\Dynamics CRM\study\autoDiler\WorkFlows\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+D:\Code\Dynamics CRM\study\autoDiler\WorkFlows\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+D:\Code\Dynamics CRM\study\autoDiler\WorkFlows\bin\Debug\Microsoft.Xrm.Sdk.xml
+D:\Code\Dynamics CRM\study\autoDiler\WorkFlows\bin\Debug\Microsoft.Xrm.Sdk.Workflow.xml
+D:\Code\Dynamics CRM\study\autoDiler\WorkFlows\obj\Debug\WorkFlows.csproj.CopyComplete
+D:\Code\Dynamics CRM\study\autoDiler\WorkFlows\obj\Debug\WorkFlows.dll
+D:\Code\Dynamics CRM\study\autoDiler\WorkFlows\obj\Debug\WorkFlows.pdb
